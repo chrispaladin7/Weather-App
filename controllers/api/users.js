@@ -5,7 +5,6 @@ const User = require('../../models/user');
 module.exports = {
   create,
   login,
-
 };
 
 
