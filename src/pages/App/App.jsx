@@ -5,6 +5,7 @@ import "./App.css";
 import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../../pages/HomePage/HomePage";
+import WeatherPage from "../WeatherPage/WeatherPage";
 // import PcPostPage from "../PcPostPage/PcPostPage";
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <NavBar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/weatherSearch" element={<WeatherPage/>}/>
         {/* <Route path="/posts" element={<PcPostPage />} /> */}
         <Route path="/login" element={<AuthPage setUser={setUser} />} />
       </Routes>
