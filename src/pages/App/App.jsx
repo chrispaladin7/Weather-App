@@ -15,10 +15,10 @@ export default function App() {
       <NavBar user={user} setUser={setUser} />
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/weatherSearch" element={<WeatherPage/>}/>
-        {/* <Route path="/posts" element={<PcPostPage />} /> */}
+        <Route path="/search" element={<WeatherPage/>}/>
         <Route path="/login" element={<AuthPage setUser={setUser} />} />
       </Routes>
     </main>
   );
 }
+

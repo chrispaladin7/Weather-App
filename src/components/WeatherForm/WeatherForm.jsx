@@ -1,46 +1,28 @@
 import './WeatherForm.css';
 import searchIcon from '../../Assets/search.png';
-import cloudIcon from '../../Assets/cloud.png';
-import drizzleIcon from '../../Assets/drizzle.png';
 import humidityIcon from '../../Assets/humidity.png';
-import rainIcon from '../../Assets/rain.png';
-import snowIcon from '../../Assets/snow.png';
 import windIcon from '../../Assets/wind.png';
 import clearIcon from '../../Assets/clear.png';
 import { useState } from 'react';
+import 'animate.css';
+import { fetchWeather } from '../../utilities/weather-api';
 
 export default function WeatherForm() {
     const [searchText, setSearchText] = useState('');
     const [wIcon, setWIcon] = useState(clearIcon);
+    const [animationImage, setAnimationImage] = useState('');
+    const [weatherData, setWeatherData] = useState(null);
 
-    const api_key = '4dc891ac30b0d1c7e1d199a12e89c137';
-
-    async function fetchWeather() {
-        const cityLocation = document.getElementsByClassName('cityInput');
-        if (cityLocation[0].value === '') return 0;
-        const URL = `https://api.openweathermap.org/data/2.5/weather?q=${cityLocation[0].value}&units=imperial&appid=${api_key}`;
-
-        const response = await fetch(URL);
-        const data = await response.json();
-        const temperature = document.getElementsByClassName('weather-temp');
-        const humidity = document.getElementsByClassName('humidity-percent');
-        const wind = document.getElementsByClassName('windspeed-score');
-        const location = document.getElementsByClassName('weather-location');
-        const longitude = 0;
-        const latitude = 0;
-
-        temperature[0].innerText = Math.floor(data.main.temp) + ' °F';
-        humidity[0].innerText = data.main.humidity + ' %';
-        wind[0].innerText = data.wind.speed + ' km/h';
-        location[0].innerText = data.name;
-
-        const iconCode = data.weather[0].icon;
-        setWIcon(mapWeatherIcon(iconCode));
-    }
-
-    function handleSearch() {
-        fetchWeather();
-        setSearchText('');
+    async function handleSearch() {
+        try {
+            const data = await fetchWeather(searchText);
+            setWeatherData(data);
+            setAnimationImage('');
+            setSearchText('');
+            setWIcon(mapWeatherIcon(weatherData?.weather[0]?.icon)); 
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+        }
     }
 
     function handleChange(evt) {
@@ -87,27 +69,30 @@ export default function WeatherForm() {
                     <img src={searchIcon} alt="" />
                 </div>
             </div>
-            <div className="weather-image">
+
+            <div className={`weather-image ${animationImage}`}>
                 <img src={wIcon} alt="" />
             </div>
-            <div className="weather-temp">-</div>
-            <div className="weather-location">- -</div>
+            <div className="weather-description">{weatherData?.weather[0]?.description}</div>
+            <div className="weather-temp">{weatherData?.main?.temp}</div>
+            <div className="weather-location">{weatherData?.name}</div>
             <div className="data-container">
                 <div className="element">
                     <img src={humidityIcon} alt="" className="icon" />
                     <div className="data">
-                        <div className="humidity-percent">-</div>
+                        <div className="humidity-percent">{weatherData?.main?.humidity}</div>
                         <div className="humidity-text">Humidity</div>
                     </div>
                 </div>
                 <div className="element">
                     <img src={windIcon} alt="" className="icon" />
                     <div className="data">
-                        <div className="windspeed-score">-</div>
+                        <div className="windspeed-score">{weatherData?.wind?.speed}</div>
                         <div className="windspeed-text">Wind Speed</div>
                     </div>
                 </div>
             </div>
+            <button type="submit">View Details</button>
         </div>
     );
 }
