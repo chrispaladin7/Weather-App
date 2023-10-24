@@ -6,29 +6,14 @@ import clearIcon from '../../Assets/clear.png';
 import { useState } from 'react';
 import 'animate.css';
 import { fetchWeather } from '../../utilities/weather-api';
+import WeatherDetailModal from '../WeatherDetail/WeatherDetailModal';
 
 export default function WeatherForm() {
     const [searchText, setSearchText] = useState('');
     const [wIcon, setWIcon] = useState(clearIcon);
     const [animationImage, setAnimationImage] = useState('');
     const [weatherData, setWeatherData] = useState(null);
-
-    async function handleSearch() {
-        try {
-            const data = await fetchWeather(searchText);
-            setWeatherData(data);
-            setAnimationImage('');
-            setSearchText('');
-            setWIcon(mapWeatherIcon(weatherData?.weather[0]?.icon)); 
-        } catch (error) {
-            console.error("Error fetching weather data:", error);
-        }
-    }
-
-    function handleChange(evt) {
-        const value = evt.target.value;
-        setSearchText(value);
-    }
+    const [openWeatherModal, setWeatherModal] = useState(false);
 
     const mapWeatherIcon = (iconCode) => {
         const iconMappings = {
@@ -55,6 +40,49 @@ export default function WeatherForm() {
         return iconMappings[iconCode] || clearIcon;
     };
 
+    const temperature = document.getElementsByClassName('weather-temp');
+    const humidity = document.getElementsByClassName('humidity-percent');
+    const wind = document.getElementsByClassName('windspeed-score');
+    const location = document.getElementsByClassName('weather-location');
+    const description = document.getElementsByClassName('weather-description');
+
+
+
+    async function handleSearch() {
+        try {
+            setAnimationImage('');
+            const data = await fetchWeather(searchText);
+            setWeatherData(data);
+            setSearchText('');
+            setWIcon(mapWeatherIcon(data?.weather[0]?.icon));
+            // console.log(data?.weather[0].icon)
+            temperature[0].innerText = Math.floor(data.main.temp) + ' °F';
+            humidity[0].innerText = data.main.humidity + ' %';
+            wind[0].innerText = data.wind.speed + ' km/h';
+            location[0].innerText = data.name.toUpperCase();
+            description[0].innerText = data.weather[0].main;
+
+            setAnimationImage('animate__animated animate__fadeInUp');
+        } catch (error) {
+            console.error("Error fetching weather data:", error);
+            setSearchText('');
+        }
+    }
+
+    function handleChange(evt) {
+        const value = evt.target.value;
+        setSearchText(value);
+    }
+
+    function handleOpenModal() {
+        setWeatherModal(true);
+    }
+
+    function handleCloseModal() {
+        setWeatherModal(false);
+    }
+
+
     return (
         <div className="container">
             <div className="top-bar">
@@ -73,26 +101,28 @@ export default function WeatherForm() {
             <div className={`weather-image ${animationImage}`}>
                 <img src={wIcon} alt="" />
             </div>
-            <div className="weather-description">{weatherData?.weather[0]?.description}</div>
-            <div className="weather-temp">{weatherData?.main?.temp}</div>
-            <div className="weather-location">{weatherData?.name}</div>
+            <div className="weather-description">-</div>
+            <div className="weather-temp">-</div>
+            <div className="weather-location">-</div>
             <div className="data-container">
                 <div className="element">
                     <img src={humidityIcon} alt="" className="icon" />
                     <div className="data">
-                        <div className="humidity-percent">{weatherData?.main?.humidity}</div>
+                        <div className="humidity-percent">-</div>
                         <div className="humidity-text">Humidity</div>
                     </div>
                 </div>
                 <div className="element">
                     <img src={windIcon} alt="" className="icon" />
                     <div className="data">
-                        <div className="windspeed-score">{weatherData?.wind?.speed}</div>
+                        <div className="windspeed-score">-</div>
                         <div className="windspeed-text">Wind Speed</div>
                     </div>
                 </div>
             </div>
-            <button type="submit">View Details</button>
+
+            <button className="openWeatherModal" onClick={handleOpenModal}>View Details</button>
+            {openWeatherModal && <WeatherDetailModal closeModal={handleCloseModal} weatherData={weatherData} />}
         </div>
     );
 }
