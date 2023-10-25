@@ -6,7 +6,6 @@ import AuthPage from "../AuthPage/AuthPage";
 import NavBar from "../../components/NavBar/NavBar";
 import HomePage from "../../pages/HomePage/HomePage";
 import WeatherPage from "../WeatherPage/WeatherPage";
-// import PcPostPage from "../PcPostPage/PcPostPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());

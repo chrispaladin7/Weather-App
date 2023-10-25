@@ -55,7 +55,6 @@ export default function WeatherForm() {
             setWeatherData(data);
             setSearchText('');
             setWIcon(mapWeatherIcon(data?.weather[0]?.icon));
-            // console.log(data?.weather[0].icon)
             temperature[0].innerText = Math.floor(data.main.temp) + ' °F';
             humidity[0].innerText = data.main.humidity + ' %';
             wind[0].innerText = data.wind.speed + ' km/h';
