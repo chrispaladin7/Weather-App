@@ -7,9 +7,8 @@ import windIcon from '../../Assets/wind.png';
 import clearIcon from '../../Assets/clear.png';
 import WeatherDetailModal from '../WeatherDetail/WeatherDetailModal';
 
-export default function WeatherForm({ handleSearch, weatherData,location,description,temperature,humidity,windspeed,animationImage,weatherIcon }) {
+export default function WeatherForm({ handleSearch, weatherData, location, description, temperature, humidity, windspeed, animationImage, weatherIcon }) {
     const [searchText, setSearchText] = useState('');
-    // const [animationImage, setAnimationImage] = useState('');
     const [openWeatherModal, setWeatherModal] = useState(false);
 
     function handleChange(evt) {
@@ -44,21 +43,21 @@ export default function WeatherForm({ handleSearch, weatherData,location,descrip
             <div className={`weather-image ${animationImage}`}>
                 <img src={weatherIcon} alt="" />
             </div>
-            <div className="weather-description">{description}</div>
-            <div className="weather-temp">{temperature}</div>
-            <div className="weather-location">{location}</div>
+            <div className="weather-description">{description ? description : "No data"}</div>
+            <div className="weather-temp">{temperature ? temperature : "-"}</div>
+            <div className="weather-location">{location ? location : "N/A"}</div>
             <div className="data-container">
                 <div className="element">
                     <img src={humidityIcon} alt="" className="icon" />
                     <div className="data">
-                        <div className="humidity-percent">{humidity}</div>
+                        <div className="humidity-percent">{humidity ? humidity : "-"}</div>
                         <div className="humidity-text">Humidity</div>
                     </div>
                 </div>
                 <div className="element">
                     <img src={windIcon} alt="" className="icon" />
                     <div className="data">
-                        <div className="windspeed-score">{windspeed}</div>
+                        <div className="windspeed-score">{windspeed ? windspeed : "-"}</div>
                         <div className="windspeed-text">Wind Speed</div>
                     </div>
                 </div>
