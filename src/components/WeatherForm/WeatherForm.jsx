@@ -1,19 +1,19 @@
 import './WeatherForm.css';
 import searchIcon from '../../Assets/search.png';
+import { useState } from 'react';
+import 'animate.css';
 import humidityIcon from '../../Assets/humidity.png';
 import windIcon from '../../Assets/wind.png';
 import clearIcon from '../../Assets/clear.png';
-import { useState } from 'react';
-import 'animate.css';
-import { fetchWeather } from '../../utilities/weather-api';
 import WeatherDetailModal from '../WeatherDetail/WeatherDetailModal';
 
-export default function WeatherForm() {
+export default function WeatherForm({ handleSearch, weatherData,location,description,temperature,humidity,windspeed }) {
     const [searchText, setSearchText] = useState('');
     const [wIcon, setWIcon] = useState(clearIcon);
     const [animationImage, setAnimationImage] = useState('');
-    const [weatherData, setWeatherData] = useState(null);
     const [openWeatherModal, setWeatherModal] = useState(false);
+    // const [ description, temp, name, humidity, speed ] = useState(weatherData);
+    
 
     const mapWeatherIcon = (iconCode) => {
         const iconMappings = {
@@ -40,33 +40,9 @@ export default function WeatherForm() {
         return iconMappings[iconCode] || clearIcon;
     };
 
-    const temperature = document.getElementsByClassName('weather-temp');
-    const humidity = document.getElementsByClassName('humidity-percent');
-    const wind = document.getElementsByClassName('windspeed-score');
-    const location = document.getElementsByClassName('weather-location');
-    const description = document.getElementsByClassName('weather-description');
 
 
 
-    async function handleSearch() {
-        try {
-            setAnimationImage('');
-            const data = await fetchWeather(searchText);
-            setWeatherData(data);
-            setSearchText('');
-            setWIcon(mapWeatherIcon(data?.weather[0]?.icon));
-            temperature[0].innerText = Math.floor(data.main.temp) + ' °F';
-            humidity[0].innerText = data.main.humidity + ' %';
-            wind[0].innerText = data.wind.speed + ' km/h';
-            location[0].innerText = data.name.toUpperCase();
-            description[0].innerText = data.weather[0].main;
-
-            setAnimationImage('animate__animated animate__fadeInUp');
-        } catch (error) {
-            console.error("Error fetching weather data:", error);
-            setSearchText('');
-        }
-    }
 
     function handleChange(evt) {
         const value = evt.target.value;
@@ -92,7 +68,7 @@ export default function WeatherForm() {
                     value={searchText}
                     onChange={handleChange}
                 />
-                <div className="search-icon" onClick={handleSearch}>
+                <div className="search-icon" onClick={() => handleSearch(searchText)}>
                     <img src={searchIcon} alt="" />
                 </div>
             </div>
@@ -100,9 +76,9 @@ export default function WeatherForm() {
             <div className={`weather-image ${animationImage}`}>
                 <img src={wIcon} alt="" />
             </div>
-            <div className="weather-description">-</div>
-            <div className="weather-temp">-</div>
-            <div className="weather-location">-</div>
+            <div className="weather-description"></div>
+            <div className="weather-temp"></div>
+            <div className="weather-location">{location}</div>
             <div className="data-container">
                 <div className="element">
                     <img src={humidityIcon} alt="" className="icon" />
@@ -119,6 +95,8 @@ export default function WeatherForm() {
                     </div>
                 </div>
             </div>
+
+            <div></div>
 
             <button className="openWeatherModal" onClick={handleOpenModal}>View Details</button>
             {openWeatherModal && <WeatherDetailModal closeModal={handleCloseModal} weatherData={weatherData} />}

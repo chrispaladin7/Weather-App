@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       {user ?
         <>
-          <Link to="/search">Search</Link>
+          <Link to="/search">Search by Location</Link>
           &nbsp; | &nbsp;
           <Link to="" onClick={handleLogOut}>Log Out</Link>
           &nbsp; | &nbsp;
