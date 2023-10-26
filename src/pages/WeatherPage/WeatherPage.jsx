@@ -49,7 +49,6 @@ export default function WeatherPage({ setWeatherData, weatherData }) {
             setDescription(data.weather[0].main);
             setTemperature(`${Math.floor(data.main.temp)} °F`);
             setWindSpeed(`${data.wind.speed} km/h`);
-            // setSearchText('');
             setWIcon(mapWeatherIcon(data?.weather[0]?.icon));
             setAnimationImage('animate__animated animate__fadeInUp');
 
