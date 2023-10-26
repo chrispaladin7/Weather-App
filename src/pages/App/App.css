@@ -7,10 +7,11 @@ body{
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
-  background: linear-gradient(315deg, rgb(187, 212, 236) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(233, 152, 81) 98%);
+  background: linear-gradient(315deg, rgb(187, 212, 236) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(81, 147, 233) 98%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
+  background-image: url("https://www.transparentpng.com/thumb/sky/HG6DIh-pictures-clouds-the-sky-cloud-png-transparent-free.png");
 }
 
 @keyframes gradient {
@@ -18,7 +19,7 @@ body{
       background-position: 0% 0%;
   }
   50% {
-      background-position: 100% 100%;
+      background-position: 50% 50%;
   }
   100% {
       background-position: 0% 0%;

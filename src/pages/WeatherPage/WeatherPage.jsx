@@ -2,8 +2,6 @@ import WeatherForm from "../../components/WeatherForm/WeatherForm"
 import "./WeatherPage.css"
 import { fetchWeather } from "../../utilities/seaches-api";
 import { useState } from 'react';
-import humidityIcon from '../../Assets/humidity.png';
-import windIcon from '../../Assets/wind.png';
 import clearIcon from '../../Assets/clear.png';
 
 export default function WeatherPage({ setWeatherData, weatherData }) {
