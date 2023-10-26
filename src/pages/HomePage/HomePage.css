@@ -1,5 +1,12 @@
+
+.swiper-container{
+    display: flex;
+    width: 100vh;
+    margin: 0  auto;
+}
+
 .swiper-container img{
-    width: 100%;
+    width: 100vh;
     height: 50vh;
     border-radius: 20px;
 }

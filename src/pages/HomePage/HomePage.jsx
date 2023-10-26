@@ -20,18 +20,19 @@ export default function HomePage() {
                     pagination={{ clickable: true }}
                     scrollbar={{ draggable: true }}
                     effect="Fade"
-                    // onSwiper={(swiper) => console.log(swiper)}
-                    // onSlideChange={() => console.log('slide change')}
                 >
-                    <SwiperSlide><img src="https://img.freepik.com/free-photo/defocused-dry-autumn-leaves-nature_23-2150708277.jpg?t=st=1698280195~exp=1698283795~hmac=5d63f125c080c2983e999e1b4894f897c602e4a0ce68feccbd8a7110ccd6d4a4&w=1060" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://www.prioritytire.com/product_images/uploaded_images/pt-blog-all-season-vs-all-weather-main-image-02-700x467.jpg" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://img.freepik.com/free-photo/defocused-dry-autumn-leaves-nature_23-2150708277.jpg?t=st=1698280195~exp=1698283795~hmac=5d63f125c080c2983e999e1b4894f897c602e4a0ce68feccbd8a7110ccd6d4a4&w=1060" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://img.freepik.com/free-photo/defocused-dry-autumn-leaves-nature_23-2150708277.jpg?t=st=1698280195~exp=1698283795~hmac=5d63f125c080c2983e999e1b4894f897c602e4a0ce68feccbd8a7110ccd6d4a4&w=1060" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://img.freepik.com/free-photo/defocused-dry-autumn-leaves-nature_23-2150708277.jpg?t=st=1698280195~exp=1698283795~hmac=5d63f125c080c2983e999e1b4894f897c602e4a0ce68feccbd8a7110ccd6d4a4&w=1060" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://img.freepik.com/free-photo/defocused-dry-autumn-leaves-nature_23-2150708277.jpg?t=st=1698280195~exp=1698283795~hmac=5d63f125c080c2983e999e1b4894f897c602e4a0ce68feccbd8a7110ccd6d4a4&w=1060" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://img.freepik.com/free-photo/defocused-dry-autumn-leaves-nature_23-2150708277.jpg?t=st=1698280195~exp=1698283795~hmac=5d63f125c080c2983e999e1b4894f897c602e4a0ce68feccbd8a7110ccd6d4a4&w=1060" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/125510/pexels-photo-125510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide> 
+                    <SwiperSlide><img src="https://images.pexels.com/photos/763398/pexels-photo-763398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/813872/pexels-photo-813872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/436792/pexels-photo-436792.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/167699/pexels-photo-167699.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
+                    <SwiperSlide><img src="https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
                 </Swiper>
             </div>
+            
         </main>
     );
 }
