@@ -13,8 +13,11 @@ export default function App() {
   const [weatherData,setWeatherData] = useState(null);
 
   return (
-    <main className="App">
+    <>
+    <header>
       <NavBar user={user} setUser={setUser} />
+    </header>
+    <main className="App">
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/search" element={<WeatherPage setWeatherData={setWeatherData} weatherData={weatherData}/>}/>
@@ -22,6 +25,7 @@ export default function App() {
         <Route path="/login" element={<AuthPage setUser={setUser} />} />
       </Routes>
     </main>
+    </>
   );
 }
 

@@ -8,12 +8,20 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
 export default function HomePage() {
+    // useEffect(() => {
+    //     async function getLatLng() {
+    //       const { latitude, longitude } = await getCurrentLatLng();
+    //       console.log(latitude, longitude);
+    //     };
+    
+    //     getLatLng();
+    //   }, []);
     return (
-        <main>
-            <h1>HomePage</h1>
+        <>
+            <h1>WeatherPulse Pro</h1>
             <div className="swiper-container">
                 <Swiper
-                    modules={[Navigation, Pagination, Scrollbar, A11y,EffectFade]}
+                    modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
                     spaceBetween={10}
                     slidesPerView={1}
                     navigation
@@ -23,7 +31,7 @@ export default function HomePage() {
                 >
                     <SwiperSlide><img src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://images.pexels.com/photos/125510/pexels-photo-125510.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
-                    <SwiperSlide><img src="https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide> 
+                    <SwiperSlide><img src="https://images.pexels.com/photos/268941/pexels-photo-268941.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://images.pexels.com/photos/763398/pexels-photo-763398.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://images.pexels.com/photos/76969/cold-front-warm-front-hurricane-felix-76969.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
                     <SwiperSlide><img src="https://images.pexels.com/photos/813872/pexels-photo-813872.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
@@ -32,7 +40,10 @@ export default function HomePage() {
                     <SwiperSlide><img src="https://images.pexels.com/photos/753619/pexels-photo-753619.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" /></SwiperSlide>
                 </Swiper>
             </div>
-            
-        </main>
+            <br />
+            <a className="widget" class="weatherwidget-io" href="https://forecast7.com/en/51d51n0d13/london/?unit=us" data-label_1="LONDON" data-label_2="WEATHER" data-theme="original" >LONDON WEATHER</a>
+            <br />
+            <a className="widget" class="weatherwidget-io" href="https://forecast7.com/en/40d71n74d01/new-york/?unit=us" data-label_1="NEW YORK" data-label_2="WEATHER" data-theme="original" >NEW YORK WEATHER</a>
+        </>
     );
 }

@@ -10,3 +10,21 @@
     height: 50vh;
     border-radius: 20px;
 }
+main{
+    margin-top: 25px;
+    height: 150vh;
+    width: 100%;
+    border-radius: 10px;
+    background-color: rgba(192, 192, 192, 0.50);
+}
+
+.widget:disabled{
+    pointer-events: none;
+    cursor: default;
+  
+}
+.weatherwidget-io:disabled{
+    pointer-events: none;
+    cursor: default;
+  
+}

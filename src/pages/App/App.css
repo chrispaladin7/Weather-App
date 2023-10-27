@@ -2,12 +2,12 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   overflow: hidden;
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
   overflow: auto;
-  background: linear-gradient(315deg, rgb(187, 212, 236) 3%, rgba(60,132,206,1) 38%, rgba(48,238,226,1) 68%, rgb(81, 147, 233) 98%);
+  background: linear-gradient(315deg, rgb(187, 212, 236) 3%, rgba(60, 132, 206, 1) 38%, rgba(48, 238, 226, 1) 68%, rgb(81, 147, 233) 98%);
   animation: gradient 15s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;
@@ -16,13 +16,15 @@ body{
 
 @keyframes gradient {
   0% {
-      background-position: 0% 0%;
+    background-position: 0% 0%;
   }
+
   50% {
-      background-position: 50% 50%;
+    background-position: 50% 50%;
   }
+
   100% {
-      background-position: 0% 0%;
+    background-position: 0% 0%;
   }
 }
 
@@ -60,7 +62,14 @@ body{
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+h1 {
+  font-family: 'Montserrat', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-family: 'Public Sans', sans-serif;
 }

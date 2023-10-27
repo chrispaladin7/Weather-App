@@ -3,21 +3,6 @@ import Map from "../../components/Map/Map";
 import { getCurrentLatLng } from '../../services/geolocation';
 
 export default function WeatherDetailPage({ weatherData }) {
-  // const [latitude, setLatitude] = useEffect(null);
-  // const [longitude, setLongitude] = useEffect(null);
-
-  // setLatitude(parseFloat`${weatherData.coord.lat}`);
-  // setLongitude(`${weatherData.coord.lon}`);
-
-  useEffect(() => {
-    async function componentDidMount() {
-      const { latitude, longitude } = await getCurrentLatLng();
-      console.log(latitude, longitude);
-    };
-
-    componentDidMount();
-  }, []);
-
   return (
     <>
       {
@@ -37,12 +22,10 @@ export default function WeatherDetailPage({ weatherData }) {
               <p>Longitude: {weatherData.coord.lon} </p>
               <p>Latitude: {weatherData.coord.lat} </p>
             </div>
-            <div className="detail">
-              <Map
-                lng={weatherData.coord.lon}
-                lat={weatherData.coord.lat}
-              />
-            </div>
+            <Map
+              lng={weatherData.coord.lon}
+              lat={weatherData.coord.lat}
+            />
           </div>
 
           :
