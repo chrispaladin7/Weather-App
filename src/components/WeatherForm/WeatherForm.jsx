@@ -27,7 +27,6 @@ export default function WeatherForm({ handleSearch, weatherData, location, descr
 
     return (
         <>
-            <h1>Search</h1>
             <div className="container">
                 <div className="top-bar">
                     <input

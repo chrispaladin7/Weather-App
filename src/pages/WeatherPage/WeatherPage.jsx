@@ -60,6 +60,7 @@ export default function WeatherPage({ setWeatherData, weatherData }) {
 
     return (
         <div>
+            <br />
             <WeatherForm
                 handleSearch={handleSearch}
                 weatherData={weatherData}

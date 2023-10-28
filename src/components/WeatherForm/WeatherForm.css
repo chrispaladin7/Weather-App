@@ -1,26 +1,24 @@
-body {
-    background-color: white;
-}
 
-.container {
-    width: 75%;
+main .container {
+    width: 100%;
     height: 50%;
     margin: 0 auto;
-    margin-top: 25px;
-    padding: 25px;
+    margin-top: 10px;
+    padding: 10px;
     border-radius: 10px;
     background: rgb(2, 0, 36);
     background: linear-gradient(90deg, rgba(2, 0, 36, 0) 0%, rgba(5, 80, 82, 1) 0%, rgba(9, 119, 121, 1) 49%, rgba(0, 212, 255, 1) 100%);
 }
 
-.top-bar {
+main .top-bar {
     display: flex;
     justify-content: center;
     gap: 14px;
     padding: auto;
+    margin-top: 10px;
 }
 
-.top-bar input {
+main .top-bar input {
     display: flex;
     width: 350px;
     height: 50px;
@@ -32,7 +30,7 @@ body {
     font-weight: 400;
 }
 
-.search-icon {
+main .search-icon {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -53,7 +51,7 @@ body {
     justify-content: center;
 }
 
-.weather-temp {
+main .weather-temp {
     display: flex;
     justify-content: center;
     color: aliceblue;
@@ -61,7 +59,7 @@ body {
     font-weight: 400;
 }
 
-.weather-location {
+main .weather-location {
     display: flex;
     justify-content: center;
     color: aliceblue;
@@ -69,7 +67,7 @@ body {
     font-weight: 400;
 }
 
-.weather-description{
+main .weather-description{
     display: flex;
     justify-content: center;
     color: aliceblue;
@@ -77,46 +75,47 @@ body {
     font-weight: 400;
 }
 
-.data-container {
-    margin-top: 50px;
+main .data-container {
+    margin-top: 0;
+    width: 100%;
     color: aliceblue;
     display: flex;
     justify-content: center;
 }
 
-.cityInput{
+main .cityInput{
     width: 50%;
 }
 
-.element {
+main .element {
     margin: auto;
     display: flex;
     align-items: flex-start;
     gap: 10px;
 }
 
-.weather-image > img{
+main .weather-image > img{
     width: 25%;
     height: 25%;
     padding: 0;
     margin: 0 auto;
 }
 
-.data {
+main .data {
     font-size: 1.5em;
     font-weight: 400;
 }
 
-.humidity-text {
+main .humidity-text {
     font-size: 1em;
     font-weight: 400;
 }
 
-.windspeed-text {
+main .windspeed-text {
     font-size: 1em;
     font-weight: 400;
 }
 
-.icon {
+main .icon {
     margin-top: 10px;
 }

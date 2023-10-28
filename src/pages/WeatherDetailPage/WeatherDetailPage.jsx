@@ -1,16 +1,15 @@
-import { useState, useEffect } from "react";
 import Map from "../../components/Map/Map";
-import { getCurrentLatLng } from '../../services/geolocation';
+import "./WeatherDetailPage.css";
 
 export default function WeatherDetailPage({ weatherData }) {
   return (
     <>
       {
         weatherData ?
-          <div>
+          <div className="container-detail">
+            <h1>{weatherData.name}</h1> {/* Move the h1 here */}
             <div className="detail">
               <br />
-              <h1>{weatherData.name}</h1>
               <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="" />
               <p>Temperature: {weatherData.main.temp} °F</p>
               <p>Humidity: {weatherData.main.humidity} %</p>
@@ -22,16 +21,16 @@ export default function WeatherDetailPage({ weatherData }) {
               <p>Longitude: {weatherData.coord.lon} </p>
               <p>Latitude: {weatherData.coord.lat} </p>
             </div>
-            <Map
-              lng={weatherData.coord.lon}
-              lat={weatherData.coord.lat}
-            />
+            <div className="map-detail">
+              <Map
+                lng={weatherData.coord.lon}
+                lat={weatherData.coord.lat}
+              />
+            </div>
           </div>
-
           :
           <p>No Data Yet</p>
       }
-
     </>
   );
 }

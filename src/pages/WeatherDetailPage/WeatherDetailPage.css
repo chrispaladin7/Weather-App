@@ -1,0 +1,28 @@
+.container-detail {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    background-color: wheat;
+    border-radius: 10px;
+    height: 100vh;
+    padding-top: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    
+  }
+  
+  .detail {
+    flex: 1; 
+    padding: 20px;
+  }
+  
+  .map-detail {
+    flex: 1;
+    padding: 20px; 
+  }
+  
+  
+  h1 {
+    margin-top: 20px; 
+  }
+  
