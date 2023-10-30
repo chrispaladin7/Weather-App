@@ -1,5 +1,14 @@
 import Map from "../../components/Map/Map";
 import "./WeatherDetailPage.css";
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  MDBCardImage,
+  MDBCardHeader
+
+} from 'mdb-react-ui-kit';
 
 export default function WeatherDetailPage({ weatherData }) {
   return (
@@ -7,29 +16,48 @@ export default function WeatherDetailPage({ weatherData }) {
       {
         weatherData ?
           <div className="container-detail">
-            <h1>{weatherData.name}</h1> {/* Move the h1 here */}
-            <div className="detail">
-              <br />
-              <img src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} alt="" />
-              <p>Temperature: {weatherData.main.temp} °F</p>
-              <p>Humidity: {weatherData.main.humidity} %</p>
-              <p>Description: {weatherData.weather[0].description}</p>
-              <p>Feels like: {weatherData.main.feels_like} °F</p>
-              <p>Min Temp: {weatherData.main.temp_min} °F</p>
-              <p>Max Temp: {weatherData.main.temp_max} °F</p>
-              <p>Air Pressure: {weatherData.main.pressure} mbar</p>
-              <p>Longitude: {weatherData.coord.lon} </p>
-              <p>Latitude: {weatherData.coord.lat} </p>
-            </div>
+            <MDBCard className="detail-card" border='primary' background='white'>
+              <MDBCardImage className="detail-card-image" src={`https://openweathermap.org/img/wn/${weatherData.weather[0].icon}@2x.png`} position='top' alt='...' />
+              <MDBCardBody>
+                <MDBCardTitle>{weatherData.name}</MDBCardTitle>
+                <MDBCardText>
+                  <article>Temperature: <span> {weatherData.main.temp} °F 🌡️</span></article>
+                  <article>Humidity: <span> {weatherData.main.humidity} %</span></article>
+                  <article>Description: <span> {weatherData.weather[0].description}</span></article>
+                  <article>Feels like: <span> {weatherData.main.feels_like} °F</span></article>
+                  <article>Min Temp: <span> {weatherData.main.temp_min} °F</span></article>
+                  <article>Max Temp: <span> {weatherData.main.temp_max} °F</span></article>
+                  <article>Air Pressure: <span> {weatherData.main.pressure} mbar</span></article>
+                  <article>Wind Speed: <span> {weatherData.wind.speed} m/h 🌬️</span></article>
+                  <article>Longitude: <span> {weatherData.coord.lon} </span></article>
+                  <article>Latitude: <span> {weatherData.coord.lat} </span></article>
+                </MDBCardText>
+              </MDBCardBody>
+            </MDBCard >
             <div className="map-detail">
-              <Map
-                lng={weatherData.coord.lon}
-                lat={weatherData.coord.lat}
-              />
+              <MDBCard background='primary'>
+                <MDBCardBody>
+                  {/* <MDBCardTitle>LOCATION</MDBCardTitle>  */}
+                  <Map
+                    lng={weatherData.coord.lon}
+                    lat={weatherData.coord.lat}
+                  />
+                </MDBCardBody>
+              </MDBCard>
             </div>
           </div>
           :
-          <p>No Data Yet</p>
+          <div className="container-detail">
+            <MDBCard background='primary' className='text-white mb-3'>
+              <MDBCardHeader>No Location found</MDBCardHeader>
+              <MDBCardBody>
+                <MDBCardTitle>Sorry!!!!</MDBCardTitle>
+                <MDBCardText>
+                 No data found
+                </MDBCardText>
+              </MDBCardBody>
+            </MDBCard>
+          </div>
       }
     </>
   );

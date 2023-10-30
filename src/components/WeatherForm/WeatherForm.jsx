@@ -12,6 +12,7 @@ export default function WeatherForm({ handleSearch, weatherData, location, descr
     const [openWeatherModal, setWeatherModal] = useState(false);
 
     function handleChange(evt) {
+        evt.preventDefault();
         const value = evt.target.value;
         setSearchText(value);
     }
@@ -64,9 +65,9 @@ export default function WeatherForm({ handleSearch, weatherData, location, descr
                     </div>
                 </div>
 
-
-                <button className="openWeatherModal" onClick={handleOpenModal}>View Details</button>
-                {openWeatherModal && <WeatherDetailModal closeModal={handleCloseModal} weatherData={weatherData} />}
+                {/* For future Implememtation */}
+                {/* <button className="openWeatherModal" onClick={handleOpenModal}>View Details</button>
+                {openWeatherModal && <WeatherDetailModal closeModal={handleCloseModal} weatherData={weatherData} />} */}
             </div>
         </>
     );

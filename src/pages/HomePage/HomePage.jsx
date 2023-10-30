@@ -9,15 +9,16 @@ import 'swiper/css/scrollbar';
 import WidgetForm from "../../components/WidgetForm/WidgetForm";
 
 export default function HomePage() {
-    // useEffect(() => {
-    //     async function getLatLng() {
-    //       const { latitude, longitude } = await getCurrentLatLng();
-    //       console.log(latitude, longitude);
-    //     };
-    
-    //     getLatLng();
-    //   }, []);
-    
+    //For future implemantation of accessing user's location
+    /* useEffect(() => {
+         async function getLatLng() {
+           const { latitude, longitude } = await getCurrentLatLng();
+           console.log(latitude, longitude);
+         };
+     
+         getLatLng();
+       }, []); */
+
     return (
         <>
             <h1>WeatherPulse Pro</h1>
@@ -43,9 +44,9 @@ export default function HomePage() {
                 </Swiper>
             </div>
             <div>
-                <WidgetForm/>
+                <WidgetForm />
             </div>
-           
+
         </>
     );
 }

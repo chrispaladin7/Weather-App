@@ -1,28 +1,41 @@
 .container-detail {
     display: flex;
-    justify-content: center; 
-    align-items: center; 
-    background-color: wheat;
+    justify-content: space-evenly;
+    align-items: center;
     border-radius: 10px;
     height: 100vh;
-    padding-top: 20px;
     padding: 20px;
-    margin-top: 20px;
-    
-  }
-  
-  .detail {
-    flex: 1; 
-    padding: 20px;
-  }
-  
-  .map-detail {
+}
+
+.detail {
     flex: 1;
-    padding: 20px; 
-  }
-  
-  
-  h1 {
-    margin-top: 20px; 
-  }
-  
+    padding: 20px;
+}
+
+.map-detail {
+    flex: 1;
+    padding: 20px;
+}
+
+
+.detail-card-image {
+    /* background-color: aqua; */
+    width: 300px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+article {
+    text-align: justify;
+    margin: 10px;
+}
+
+.map {
+    width: 100vh;
+    height: 675px;
+}
+
+.detail-card {
+    width: 50%;
+}
+

@@ -12,7 +12,6 @@ export default function WeatherPage({ setWeatherData, weatherData }) {
     const [windspeed, setWindSpeed] = useState('');
     const [wIcon, setWIcon] = useState(clearIcon);
     const [animationImage, setAnimationImage] = useState('');
-    // const [searchText, setSearchText] = useState('');
     
     const mapWeatherIcon = (iconCode) => {
         const iconMappings = {
@@ -42,21 +41,25 @@ export default function WeatherPage({ setWeatherData, weatherData }) {
     async function handleSearch(searchText) {
         try {
             const data = await fetchWeather(searchText);
-            setWeatherData(data);
-            setAnimationImage('');
-            setLocation(`${data.name}`.toUpperCase());
-            setHumidity(`${data.main.humidity} %`);
-            setDescription(data.weather[0].main);
-            setTemperature(`${Math.floor(data.main.temp)} °F`);
-            setWindSpeed(`${data.wind.speed} km/h`);
-            setWIcon(mapWeatherIcon(data?.weather[0]?.icon));
-            setAnimationImage('animate__animated animate__fadeInUp');
-
-
+            if (data !== undefined) {
+                setWeatherData(data);
+                setAnimationImage('');
+                setLocation(`${data.name}`.toUpperCase());
+                setHumidity(`${data.main.humidity} %`);
+                setDescription(data.weather[0].main);
+                setTemperature(`${Math.floor(data.main.temp)} °F`);
+                setWindSpeed(`${data.wind.speed} m/h`);
+                setWIcon(mapWeatherIcon(data?.weather[0]?.icon));
+                setAnimationImage('animate__animated animate__fadeInUp');
+            } else {
+                console.error("No weather data found.");
+            }
         } catch (error) {
             console.error("Error fetching weather data:", error);
         }
     }
+    
+    
 
     return (
         <div>
