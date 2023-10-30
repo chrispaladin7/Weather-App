@@ -1,18 +1,31 @@
 import { useState } from 'react';
 import SignUpForm from '../../components/SignUpForm/SignUpForm';
 import LoginForm from '../../components/LoginForm/LoginForm';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
+import { EffectFade } from "swiper/modules";
 
 export default function AuthPage({ setUser }) {
-  const [showSignUp, setShowSignUp] = useState(false);
+  // const [showSignUp, setShowSignUp] = useState(false);
   return (
-    <main>
-      <h1>AuthPage</h1>
-      <button onClick={() => setShowSignUp(!showSignUp)}>{showSignUp ? 'Log In' : 'Sign Up'}</button>
-      { showSignUp ?
-          <SignUpForm setUser={setUser} />
-          :
-          <LoginForm setUser={setUser} />
-      }
-    </main>
+    <>
+      <main>
+        <h1>WeatherPulse Pro</h1>
+        <div className="swiper-container">
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
+            spaceBetween={10}
+            slidesPerView={1}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            effect="Fade"
+          >
+            <SwiperSlide> <LoginForm setUser={setUser} /></SwiperSlide>
+            <SwiperSlide><SignUpForm setUser={setUser} /></SwiperSlide>
+          </Swiper>
+        </div>
+      </main>
+    </>
   );
 }

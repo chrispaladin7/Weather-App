@@ -4,8 +4,6 @@ import { useState } from 'react';
 import 'animate.css';
 import humidityIcon from '../../Assets/humidity.png';
 import windIcon from '../../Assets/wind.png';
-import clearIcon from '../../Assets/clear.png';
-import WeatherDetailModal from '../WeatherDetail/WeatherDetailModal';
 
 export default function WeatherForm({ handleSearch, weatherData, location, description, temperature, humidity, windspeed, animationImage, weatherIcon }) {
     const [searchText, setSearchText] = useState('');
@@ -64,11 +62,13 @@ export default function WeatherForm({ handleSearch, weatherData, location, descr
                         </div>
                     </div>
                 </div>
+               
 
                 {/* For future Implememtation */}
                 {/* <button className="openWeatherModal" onClick={handleOpenModal}>View Details</button>
                 {openWeatherModal && <WeatherDetailModal closeModal={handleCloseModal} weatherData={weatherData} />} */}
             </div>
+            
         </>
     );
 }
