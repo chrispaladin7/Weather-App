@@ -6,13 +6,18 @@ export default function NavBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
+    clearLocalStorageOnLogout(); 
+  }
+
+  function clearLocalStorageOnLogout() {
+    localStorage.removeItem('lastSearch');
+    localStorage.removeItem('searchHistory');
   }
 
   return (
     <nav className='w-lg-75 mx-2 mx-lg-auto position-relative z-2 px-lg-3 py-0 shadow-5 rounded-3 rounded-lg-pill bg-dark'>
       
       <Link className="navbar" to="/">Home</Link>
-      &nbsp; | &nbsp;
       {user ?
         <>
           <span>Welcome, {user.name}</span>

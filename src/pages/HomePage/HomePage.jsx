@@ -25,13 +25,14 @@ export default function HomePage() {
         <>
             <div>
                 <br />
-                <MDBCarousel className="swiper-container" showIndicators showControls fade>
+                <MDBCarousel className="swiper-container" showIndicators showControls dealy={3000} fade>
                     <MDBCarouselItem
                         className='w-100 d-block'
                         itemId={1}
                         src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         alt='...'
                     >
+                        
                         <h2>WeatherPulse Pro</h2>
                         <p>
                             Welcome to WeatherPulse Pro, your trusted source for up-to-date weather information. Our app provides you with accurate and real-time weather forecasts, so you can plan your day with confidence. Whether you're looking for the latest weather conditions, hourly forecasts, or long-term predictions, WeatherPulse Pro has you covered. Stay informed and make the most of your day with our user-friendly weather app.

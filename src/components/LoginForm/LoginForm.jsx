@@ -41,7 +41,7 @@ export default function LoginForm({ setUser }) {
   return (
     <>
       <div>
-        <MDBCard border='primary' background='info' className='text-white mb-3'>
+        <MDBCard border='primary' background='link' className='text-white mb-3 bg-success p-2 text-dark bg-opacity-50'>
           <MDBCardHeader>Login</MDBCardHeader>
           <MDBCardText>
             <div className="form-container">

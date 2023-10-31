@@ -10,7 +10,7 @@ export default function AuthPage({ setUser }) {
   return (
     <>
       <main>
-        <h1>WeatherPulse Pro</h1>
+        <h1>𝑾𝒆𝒂𝒕𝒉𝒆𝒓𝑷𝒖𝒍𝒔𝒆 𝑷𝒓𝒐</h1>
         <div className="swiper-container">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}

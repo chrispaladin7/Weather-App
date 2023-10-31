@@ -46,7 +46,7 @@ export default class SignUpForm extends Component {
     const disable = this.state.password !== this.state.confirm;
     return (
       <div>
-        <MDBCard border='primary' background='info' className='text-black mb-3'>
+        <MDBCard border='primary' className='text-black mb-3 bg-primary p-2 text-dark bg-opacity-50'>
           <MDBCardHeader>Sign Up</MDBCardHeader>
           <MDBCardText>
             <div className="form-container">
