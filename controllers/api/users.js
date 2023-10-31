@@ -7,7 +7,6 @@ module.exports = {
   login,
 };
 
-
 async function create(req, res) {
   try {
     // Add the user to the db

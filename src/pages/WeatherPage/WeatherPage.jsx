@@ -12,7 +12,7 @@ export default function WeatherPage({ setWeatherData, weatherData }) {
     const [windspeed, setWindSpeed] = useState('');
     const [wIcon, setWIcon] = useState(clearIcon);
     const [animationImage, setAnimationImage] = useState('');
-    
+
     const mapWeatherIcon = (iconCode) => {
         const iconMappings = {
             '01d': 'https://openweathermap.org/img/wn/01d@2x.png',
@@ -58,8 +58,6 @@ export default function WeatherPage({ setWeatherData, weatherData }) {
             console.error("Error fetching weather data:", error);
         }
     }
-    
-    
 
     return (
         <div>

@@ -1,19 +1,12 @@
-/* CSS Custom Properties */
 :root {
-  --white: #FFFFFF;
-  --tan-1: #FBF9F6;
-  --tan-2: #E7E2DD;
-  --tan-3: #E2D9D1;
-  --tan-4: #D3C1AE;
   --orange: #F67F00;
-  --text-light: #968c84;
-  --text-dark: #615954;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: border-box;
 }
-
 
 #root {
   height: 100%;
@@ -49,13 +42,11 @@
   overflow-y: scroll;
 }
 
-
 p.error-message {
   color: var(--orange);
   text-align: center;
   font-size: x-large;
 }
-
 
 form {
   display: grid;
@@ -79,7 +70,6 @@ input:focus {
   border-color: var(--orange);
 }
 
-
 button.btn-sm {
   font-size: 1.5vmin;
   padding: .6vmin .8vmin;
@@ -90,8 +80,7 @@ button.btn-xs {
   padding: .4vmin .5vmin;
 }
 
-button:disabled, form:invalid button[type="submit"] {
+button:disabled,
+form:invalid button[type="submit"] {
   cursor: not-allowed;
 }
-
-

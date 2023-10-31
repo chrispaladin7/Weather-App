@@ -17,9 +17,7 @@
     padding: 20px;
 }
 
-
 .detail-card-image {
-    /* background-color: aqua; */
     width: 300px;
     height: 300px;
     margin: 0 auto;
@@ -38,4 +36,3 @@ article {
 .detail-card {
     width: 50%;
 }
-

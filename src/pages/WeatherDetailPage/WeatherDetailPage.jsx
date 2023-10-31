@@ -7,7 +7,6 @@ import {
   MDBCardText,
   MDBCardImage,
   MDBCardHeader
-
 } from 'mdb-react-ui-kit';
 
 export default function WeatherDetailPage({ weatherData }) {
@@ -37,7 +36,6 @@ export default function WeatherDetailPage({ weatherData }) {
             <div className="map-detail">
               <MDBCard background='primary'>
                 <MDBCardBody>
-                  {/* <MDBCardTitle>LOCATION</MDBCardTitle>  */}
                   <Map
                     lng={weatherData.coord.lon}
                     lat={weatherData.coord.lat}
@@ -53,7 +51,7 @@ export default function WeatherDetailPage({ weatherData }) {
               <MDBCardBody>
                 <MDBCardTitle>Sorry!!!!</MDBCardTitle>
                 <MDBCardText>
-                 No data found
+                  No search in progress or invalid search
                 </MDBCardText>
               </MDBCardBody>
             </MDBCard>

@@ -7,7 +7,6 @@ import {
   MDBCardHeader,
   MDBBtn
 } from 'mdb-react-ui-kit';
-
 export default class SignUpForm extends Component {
   state = {
     name: '',

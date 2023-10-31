@@ -30,7 +30,7 @@ export default function HomePage() {
                         src="https://images.pexels.com/photos/1107717/pexels-photo-1107717.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
                         alt='...'
                     >
-                        
+
                         <h1>WeatherPulse Pro</h1>
                         <p>
                             Welcome to WeatherPulse Pro, your trusted source for up-to-date weather information. Our app provides you with accurate and real-time weather forecasts, so you can plan your day with confidence. Whether you're looking for the latest weather conditions, hourly forecasts, or long-term predictions, WeatherPulse Pro has you covered. Stay informed and make the most of your day with our user-friendly weather app.

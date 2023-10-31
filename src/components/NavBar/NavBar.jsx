@@ -6,7 +6,7 @@ export default function NavBar({ user, setUser }) {
   function handleLogOut() {
     userService.logOut();
     setUser(null);
-    clearLocalStorageOnLogout(); 
+    clearLocalStorageOnLogout();
   }
 
   function clearLocalStorageOnLogout() {
@@ -16,7 +16,6 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav className='w-lg-75 mx-2 mx-lg-auto position-relative z-2 px-lg-3 py-0 shadow-5 rounded-3 rounded-lg-pill bg-dark'>
-      
       <Link className="navbar" to="/">Home</Link>
       {user ?
         <>
@@ -31,7 +30,7 @@ export default function NavBar({ user, setUser }) {
         </>
         :
         <>
-        <Link className="navbar" to="/login">LogIn</Link>
+          <Link className="navbar" to="/login">LogIn</Link>
         </>
       }
       <span>WeatherPulse Pro</span>

@@ -1,6 +1,5 @@
 import React from "react";
 import "./WeatherDetailModal.css"
-
 export default class WeatherDetailModal extends React.Component {
   render() {
     const { weatherData } = this.props;
