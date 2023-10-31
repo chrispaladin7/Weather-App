@@ -53,6 +53,7 @@
 p.error-message {
   color: var(--orange);
   text-align: center;
+  font-size: x-large;
 }
 
 
