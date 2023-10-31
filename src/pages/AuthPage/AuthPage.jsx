@@ -14,11 +14,10 @@ export default function AuthPage({ setUser }) {
         <div className="swiper-container">
           <Swiper
             modules={[Navigation, Pagination, Scrollbar, A11y, EffectFade]}
-            spaceBetween={10}
+            spaceBetween={1}
             slidesPerView={1}
             navigation
             pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
             effect="Fade"
           >
             <SwiperSlide> <LoginForm setUser={setUser} /></SwiperSlide>
