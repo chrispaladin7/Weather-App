@@ -48,8 +48,8 @@ Welcome to WeatherPulse Pro, your trusted source for up-to-date weather informat
 ![Google Maps](https://img.shields.io/badge/google-map-api) 
 ![Open Weather API](https://img.shields.io/badge/Open-Weather-Api
 ) 
-![Swiper JS](https://img.shields.io/badge/Swiper-JS
-) 
+![Swiper JS](https://img.shields.io/badge/Swiper-JS)
+![animate.css](https://img.shields.io/badge/animate-css)
 ![Bootstrap](https://img.shields.io/badge/bootstrap-%238511FA.svg?style=for-the-badge&logo=bootstrap&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
   ![JavaScript](https://img.shields.io/badge/-JavaScript-05122A?style=flat&logo=javascript)
   ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
